@@ -5,6 +5,7 @@ import me.justahuman.slimefun_essentials.client.SlimefunRegistry;
 import me.justahuman.slimefun_essentials.client.RecipeComponent;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -93,7 +94,7 @@ public interface IdInterpreter<T> {
         }
         // Experience
         else if (type.equals("$")) {
-            return fromEntityType(chance, EntityType.EXPERIENCE_ORB, false, amount, def);
+            return fromEntityType(chance, EntityTypes.EXPERIENCE_ORB, false, amount, def);
         }
         // Item (Or Mistake)
         else {

@@ -55,7 +55,7 @@ public class Payloads {
                     EXPECTED_PACKETS.getOrDefault(RecipeCategoriesPayload.class, 0),
                     PACKET_COUNTS.getOrDefault(RecipeDisplayPayload.class, 0),
                     EXPECTED_PACKETS.getOrDefault(RecipeDisplayPayload.class, 0));
-            ToastManager manager = Minecraft.getInstance().getToastManager();
+            ToastManager manager = Minecraft.getInstance().gui.toastManager();
             SystemToast.add(manager, type, title, description);
         };
     }

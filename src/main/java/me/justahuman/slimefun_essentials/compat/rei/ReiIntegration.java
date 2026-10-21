@@ -86,9 +86,9 @@ public class ReiIntegration implements REIClientPlugin {
         Minecraft client = Minecraft.getInstance();
         client.execute(() -> {
             AtomicBoolean started = new AtomicBoolean(false);
-            client.setScreen(new ReloadingScreen(
+            client.gui.setScreen(new ReloadingScreen(
                     () -> !started.get() || PluginManager.areAnyReloading(),
-                    () -> client.setScreen(null)
+                    () -> client.gui.setScreen(null)
             ));
             RoughlyEnoughItemsCoreClient.reloadPlugins(null, null);
             started.set(true);

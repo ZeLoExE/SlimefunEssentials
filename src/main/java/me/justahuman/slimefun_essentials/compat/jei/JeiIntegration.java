@@ -150,9 +150,9 @@ public class JeiIntegration implements IModPlugin {
         Minecraft client = Minecraft.getInstance();
         client.execute(() -> {
             AtomicBoolean started = new AtomicBoolean(false);
-            client.setScreen(new ReloadingScreen(
+            client.gui.setScreen(new ReloadingScreen(
                     () -> !started.get() || !runtimeAvailable,
-                    () -> client.setScreen(null)
+                    () -> client.gui.setScreen(null)
             ));
             JeiReloader.reload();
             started.set(true);

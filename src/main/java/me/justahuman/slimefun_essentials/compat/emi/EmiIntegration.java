@@ -32,9 +32,9 @@ public class EmiIntegration implements EmiPlugin {
                 Minecraft client = Minecraft.getInstance();
                 client.execute(() -> {
                     AtomicBoolean started = new AtomicBoolean(false);
-                    client.setScreen(new ReloadingScreen(
+                    client.gui.setScreen(new ReloadingScreen(
                             () -> !started.get() || EmiReloadManager.getStatus() == 1,
-                            () -> client.setScreen(null)
+                            () -> client.gui.setScreen(null)
                     ));
                     EmiReloadManager.reload();
                     started.set(true);

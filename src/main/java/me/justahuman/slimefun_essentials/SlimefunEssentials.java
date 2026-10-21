@@ -99,7 +99,7 @@ public class SlimefunEssentials implements ClientModInitializer {
             final KeyMapping configKeyMapping = KeyMappingHelper.registerKeyMapping(new KeyMapping("slimefun_essentials.key_bind.open_config", GLFW.GLFW_KEY_F6, CATEGORY));
             ClientTickEvents.END_CLIENT_TICK.register(client -> {
                 if (configKeyMapping.consumeClick()) {
-                    client.setScreen(ConfigScreen.buildScreen(client.screen));
+                    client.gui.setScreen(ConfigScreen.buildScreen(client.gui.screen()));
                 }
             });
         }

@@ -1,5 +1,5 @@
 plugins {
-    id 'net.fabricmc.fabric-loom' version '1.16-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version '1.19.1'
 }
 
 version = project.mod_version
@@ -37,7 +37,7 @@ dependencies {
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    implementation "curse.maven:jade-324717:${project.jade_version}"
+    compileOnly files("libs/jade-Fabric-26.2.jar")
 
     implementation("mezz.jei:jei-${project.jei_version}") {
         exclude(group: "mezz.jei")
